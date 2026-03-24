@@ -1,3 +1,9 @@
+![Python](https://img.shields.io/badge/Python-3.12%2B-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-API-green)
+![Pytest](https://img.shields.io/badge/Tests-13%20passing-brightgreen)
+![Docker](https://img.shields.io/badge/Docker-ready-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
 # Argument Analyzer API
 
 A FastAPI service that uses Claude to analyze written arguments and return structured logical components such as the main claim, premises, fallacies, argument strength, and an overall analysis.
