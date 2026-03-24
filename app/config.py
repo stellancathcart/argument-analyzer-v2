@@ -1,7 +1,11 @@
+'''
+app/services/config.py
+'''
+
 import os
 from dotenv import load_dotenv
 
-load_dotenv(override=True)
+load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 SECRET_KEY = os.getenv("SECRET_KEY", "change-me-in-production")

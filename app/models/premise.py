@@ -1,8 +1,10 @@
+'''
+app/models/premise.py
+'''
 from sqlalchemy import Text, String, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db import Base
-
 
 class Premise(Base):
     __tablename__ = "premises"

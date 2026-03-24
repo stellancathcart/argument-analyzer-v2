@@ -1,3 +1,7 @@
+'''
+app/routers/arguments.py
+'''
+
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from sqlalchemy.orm import Session
@@ -44,6 +48,11 @@ def analyze(
         analysis=result["analysis"],
         argument_strength=result["argument_strength"],
         score=result["score"],
+        model_name=result.get("model_name"),
+        prompt_version=result.get("prompt_version"),
+        latency_ms=result.get("latency_ms"),
+        analysis_status=result.get("analysis_status", "success"),
+        error_type=result.get("error_type"),
     )
     db.add(argument)
     db.flush()
@@ -80,8 +89,12 @@ def analyze(
         "argument_strength": result["argument_strength"],
         "analysis": result["analysis"],
         "score": result["score"],
+        "model_name": result.get("model_name"),
+        "prompt_version": result.get("prompt_version"),
+        "latency_ms": result.get("latency_ms"),
+        "analysis_status": result.get("analysis_status", "success"),
+        "error_type": result.get("error_type"),
     }
-
 
 @router.get("")
 def list_arguments(

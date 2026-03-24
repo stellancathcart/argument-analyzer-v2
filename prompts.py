@@ -1,3 +1,6 @@
+'''
+prompts.py
+'''
 def get_argument_analysis_prompt(text: str) -> str:
     return f"""You are a logic and argumentation expert. Analyze the following argument and return ONLY valid JSON. Do not include any preamble, explanation, or markdown formatting - just the raw JSON object.
 

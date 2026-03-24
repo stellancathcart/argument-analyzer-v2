@@ -45,6 +45,10 @@ def login(payload: LoginRequest, db: Session = Depends(get_db)):
     return {"access_token": token, "token_type": "bearer"}
 
 
+'''
+app/routers/auth.py
+'''
+
 @router.get("/me", response_model=UserResponse)
 def me(
     credentials: HTTPAuthorizationCredentials = Depends(security),

@@ -1,5 +1,5 @@
 from datetime import datetime
-from sqlalchemy import Text, ForeignKey, DateTime
+from sqlalchemy import Text, ForeignKey, DateTime, String, Float
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db import Base
@@ -15,6 +15,13 @@ class Argument(Base):
     analysis: Mapped[str | None] = mapped_column(Text, nullable=True)
     argument_strength: Mapped[str | None] = mapped_column(Text, nullable=True)
     score: Mapped[float | None] = mapped_column(nullable=True)
+
+    model_name: Mapped[str | None] = mapped_column(String, nullable=True)
+    prompt_version: Mapped[str | None] = mapped_column(String, nullable=True)
+    latency_ms: Mapped[float | None] = mapped_column(Float, nullable=True)
+    analysis_status: Mapped[str] = mapped_column(String, default="success", nullable=False)
+    error_type: Mapped[str | None] = mapped_column(String, nullable=True)
+
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
 
     user: Mapped["User"] = relationship(back_populates="arguments")

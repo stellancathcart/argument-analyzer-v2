@@ -26,3 +26,10 @@ class ArgumentResponse(BaseModel):
     argument_strength: str
     analysis: str
     score: float
+
+    # Additional metadata
+    model_name: str | None = None
+    prompt_version: str | None = None
+    latency_ms: float | None = None
+    analysis_status: str
+    error_type: str | None = None

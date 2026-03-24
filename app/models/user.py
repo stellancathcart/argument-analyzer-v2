@@ -5,6 +5,9 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.db import Base
 
 
+'''
+app/models/user.py
+'''
 class User(Base):
     __tablename__ = "users"
 

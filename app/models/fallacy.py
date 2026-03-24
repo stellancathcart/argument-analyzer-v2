@@ -1,3 +1,6 @@
+'''
+app/models/fallacy.py
+'''
 from sqlalchemy import String, Text, Float, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
